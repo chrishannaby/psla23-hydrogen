@@ -5,7 +5,8 @@
 /* Tokens */
 :root {
   --color-primary: 20 20 20; /* Text, buttons, etc. */
-  --color-contrast: 250 250 249; /* Backgrounds, borders, etc. */
+  --color-text: #000; /* Text, buttons, etc. */
+  --color-contrast: 243 243 243; /* Backgrounds, borders, etc. */
   --color-accent: 191 72 0; /* Labels like "On sale" */
   --font-size-fine: 0.75rem; /* text-xs */
   --font-size-copy: 1rem; /* text-base */
@@ -179,4 +180,27 @@ shop-pay-button {
       @apply aspect-[inherit] w-full object-cover;
     }
   }
+}
+
+
+@font-face {
+  font-family: 'DrukShop';
+  src: url("./fonts/DrukWide.otf") format("opentype");
+}
+@font-face {
+  font-family: 'Inter';
+  src: url("./fonts/Inter-Regular.ttf") format("truetype");
+}
+
+h2 {
+font-family: 'DrukShop' !important;
+}
+
+p{
+  font-family: 'Inter, sans-serif';
+}
+
+.word-section p{
+  font-family: 'DrukShop' !important;
+
 }

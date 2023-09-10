@@ -13,6 +13,12 @@ export const headers = routeHeaders;
 
 export async function loader({params, context}) {
   const {language, country} = context.storefront.i18n;
+  /*const mainHero = {
+    spread:
+      'https://cdn.shopify.com/s/files/1/0551/4566/0472/files/Hydrogen_Hero_Feature_1.jpg?v=1654902468&width=1400&height=1767&crop=center',
+    spreadSecondary:
+      'https://cdn.shopify.com/s/files/1/0551/4566/0472/files/Hydrogen_Hero_Feature_2.jpg?v=1654902468&width=1400&height=1767&crop=center',
+  };*/
 
   if (
     params.locale &&
@@ -24,7 +30,7 @@ export async function loader({params, context}) {
   }
 
   const {shop, hero} = await context.storefront.query(HOMEPAGE_SEO_QUERY, {
-    variables: {handle: 'freestyle'},
+    variables: {handle: 'unisex'},
   });
 
   const seo = seoPayload.home();
@@ -89,9 +95,40 @@ export default function Homepage() {
 
   return (
     <>
-      {primaryHero && (
+      {/*       {primaryHero && (
         <Hero {...primaryHero} height="full" top loading="eager" />
-      )}
+      )} */}
+
+      <section className="relative justify-end flex flex-col w-full -mt-nav h-screen">
+        <div className="absolute inset-0 grid flex-grow grid-flow-col pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
+          <div>
+            <img
+              alt="Tracks in the snow leading to a person on a mountain top with a red jacket contrasting to an epic blue horizon with a mountain range in the distance."
+              decoding="async"
+              height="126.2"
+              loading="eager"
+              sizes="(min-width: 48em) 50vw, 100vw"
+              src="images/hero1.webp"
+              width="100"
+              className="block object-cover w-full h-full"
+            />
+          </div>
+        </div>
+        <div className="absolute left-20 bottom-20 flex flex-col items-baseline justify-between gap-6 px-6 py-8 sm:px-8 md:px-12  from-primary/60 text-white">
+          <h2 className="whitespace-pre-wrap font-bold text-display max-w-md">
+           The Peak Collection
+          </h2>
+          <p className="max-w-lg whitespace-pre-wrap inherit text-lead font-medium">
+          Push your performance with our premium athletic wear
+          </p>
+          <div>
+            <span className="w-96 rounded-sm bg-transparent px-3.5 py-3 text-sm font-semibold border border-white text-white ring-1 ring-inset ring-gray-300">
+              Shop Now
+            </span>
+          </div>
+
+        </div>
+      </section>
 
       {featuredProducts && (
         <Suspense>
@@ -101,16 +138,58 @@ export default function Homepage() {
               return (
                 <ProductSwimlane
                   products={products}
-                  title="Featured Products"
-                  count={4}
+                  title="New arrivals"
+                  subtitle="Spring '23"
+                  count={6}
                 />
               );
             }}
           </Await>
         </Suspense>
       )}
+      <section className="text-[3.9rem] font-bold py-20 px-16 bg-white">
+        <div className="word-section space-y-12">
+          <p className="block">
+            Hydrogen combines comfort, style, and sustainability. Our products are
+            made from organic cotton and crafted in Canada.
+          </p>
+          <p className="block">
+            Each product features a minimalist aesthetic, with clean lines and
+            neutral colors.
+          </p>
+          <p className="block">Join the Hydrogen movement today and elevate your style.</p>
+        </div>
 
-      {secondaryHero && (
+      </section>
+
+      <section className="relative justify-end flex flex-col w-full aspect-[4/5] sm:aspect-square md:aspect-[5/4] lg:aspect-[3/2] xl:aspect-[2/1]">
+        <div className="absolute inset-0 grid flex-grow grid-flow-col pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
+          <div>
+            <img
+              alt="Tracks in the snow leading to a person on a mountain top with a red jacket contrasting to an epic blue horizon with a mountain range in the distance."
+              decoding="async"
+              height="126.2"
+              loading="eager"
+              sizes="(min-width: 48em) 50vw, 100vw"
+              src="images/hero2.webp"
+              width="100"
+              className="block object-cover w-full h-full"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center gap-y-6 ">
+          <h2 className="whitespace-pre-wrap font-bold text-display">
+            Midweight classics
+          </h2>
+          <h3>Clothes that work as hard as you do.</h3>
+          <div>
+            <span className="w-80 rounded-sm bg-transparent px-3.5 py-3 text-sm font-semibold border border-black text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+              Shop Now 
+            </span>
+          </div>
+        </div>
+      </section>
+      {/*       {secondaryHero && (
         <Suspense fallback={<Hero {...skeletons[1]} />}>
           <Await resolve={secondaryHero}>
             {({hero}) => {
@@ -119,9 +198,9 @@ export default function Homepage() {
             }}
           </Await>
         </Suspense>
-      )}
+      )} */}
 
-      {featuredCollections && (
+{/*       {featuredCollections && (
         <Suspense>
           <Await resolve={featuredCollections}>
             {({collections}) => {
@@ -146,7 +225,7 @@ export default function Homepage() {
             }}
           </Await>
         </Suspense>
-      )}
+      )} */}
     </>
   );
 }

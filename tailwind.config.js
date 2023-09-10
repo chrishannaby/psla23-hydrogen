@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        text: 'rgb(var(--color-text) / <alpha-value>)',
         contrast: 'rgb(var(--color-contrast) / <alpha-value>)',
         notice: 'rgb(var(--color-accent) / <alpha-value>)',
         shopPay: 'rgb(var(--color-shop-pay) / <alpha-value>)',
@@ -48,6 +49,7 @@ export default {
         lead: ['var(--font-size-lead)', '1.333'],
         copy: ['var(--font-size-copy)', '1.5'],
         fine: ['var(--font-size-fine)', '1.333'],
+        jumbo: ['4.25', '2.5'],
       },
       maxWidth: {
         'prose-narrow': '45ch',

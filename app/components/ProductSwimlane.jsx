@@ -7,12 +7,13 @@ const mockProducts = {
 export function ProductSwimlane({
   title = 'Featured Products',
   products = mockProducts,
+  subtitle = "Spring '23",
   count = 12,
   ...props
 }) {
   return (
-    <Section heading={title} padding="y" {...props}>
-      <div className="swimlane hiddenScroll md:pb-8 md:scroll-px-8 lg:scroll-px-12 md:px-8 lg:px-12">
+    <Section heading={title} subheading={subtitle} padding="y" sectionClasses={'text-center'} {...props}>
+      <div className="swimlane hiddenScroll md:pb-8 md:scroll-px-8 lg:scroll-px-12 md:px-8 lg:px-12" >
         {products.nodes.map((product) => (
           <ProductCard
             product={product}

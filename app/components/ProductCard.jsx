@@ -48,7 +48,7 @@ export function ProductCard({
         prefetch="intent"
       >
         <div className={clsx('grid gap-4', className)}>
-          <div className="card-image aspect-[4/5] bg-primary/5">
+          <div className=" aspect-[4/5] bg-primary/5">
             {image && (
               <Image
                 className="object-cover w-full fadeIn"
@@ -62,7 +62,7 @@ export function ProductCard({
             <Text
               as="label"
               size="fine"
-              className="absolute top-0 right-0 m-4 text-right text-notice"
+              className="absolute top-0 right-0 m-4 text-right text-notice hidden"
             >
               {cardLabel}
             </Text>

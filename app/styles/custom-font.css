@@ -11,3 +11,14 @@
   font-style: italic;
   src: url('./fonts/IBMPlexSerif-TextItalic.woff2') format('woff2');
 }
+
+@font-face {
+  font-family: 'DrukShop';
+  src: url("./fonts/DrukWide.otf") format("opentype");
+}
+
+
+@font-face {
+  font-family: 'Inter';
+  src: url("./fonts/Inter-Regular.ttf") format("truetype");
+}

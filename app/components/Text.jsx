@@ -64,9 +64,9 @@ export function Heading({
   };
 
   const widths = {
-    default: 'max-w-prose',
-    narrow: 'max-w-prose-narrow',
-    wide: 'max-w-prose-wide',
+    default: 'max-w-full',
+    narrow: 'max-w-full',
+    wide: 'max-w-full',
   };
 
   const styles = clsx(
@@ -90,6 +90,8 @@ export function Section({
   divider = 'none',
   display = 'grid',
   heading,
+  subheading,
+  sectionClasses,
   padding = 'all',
   ...props
 }) {
@@ -122,11 +124,19 @@ export function Section({
 
   return (
     <Component {...props} className={styles}>
-      {heading && (
-        <Heading size="lead" className={padding === 'y' ? paddings['x'] : ''}>
-          {heading}
-        </Heading>
-      )}
+      <div className={sectionClasses}>
+        {heading && (
+          <Heading size="lead" className={'text-[1.6rem] font-normal'}>
+            {heading}
+          </Heading>
+        )}
+        {subheading && (
+          <Heading size="heading" className="text-[4rem] pt-3 font-bold">
+            {subheading}
+          </Heading>
+        )}
+      </div>
+
       {children}
     </Component>
   );
