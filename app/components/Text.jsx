@@ -131,7 +131,7 @@ export function Section({
           </Heading>
         )}
         {subheading && (
-          <Heading size="heading" className="text-[2rem] lg:text-[4rem] pt-3 font-bold">
+          <Heading size="heading" className="text-[2rem] lg:text-[2.8rem] pt-3 font-bold">
             {subheading}
           </Heading>
         )}

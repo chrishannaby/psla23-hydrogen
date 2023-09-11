@@ -141,7 +141,7 @@ export default function Homepage() {
                 <ProductSwimlane
                   products={products}
                   title="New arrivals"
-                  subtitle="Spring '23"
+                  subtitle="Fall '23"
                   count={6}
                 />
               );
