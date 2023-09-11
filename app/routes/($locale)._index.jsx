@@ -3,7 +3,7 @@ import {Suspense} from 'react';
 import {Await, useLoaderData} from '@remix-run/react';
 import {AnalyticsPageType} from '@shopify/hydrogen';
 
-import {ProductSwimlane, FeaturedCollections, Hero} from '~/components';
+import {ProductSwimlane, Link, FeaturedCollections, Hero} from '~/components';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
 import {seoPayload} from '~/lib/seo.server';
@@ -116,17 +116,19 @@ export default function Homepage() {
         </div>
         <div className="absolute left-20 bottom-20 flex flex-col items-baseline justify-between gap-6 px-6 py-8 sm:px-8 md:px-12  from-primary/60 text-white">
           <h2 className="whitespace-pre-wrap font-bold text-display max-w-md">
-           The Peak Collection
+            The Peak Collection
           </h2>
           <p className="max-w-lg whitespace-pre-wrap inherit text-lead font-medium">
-          Push your performance with our premium athletic wear
+            Push your performance with our premium athletic wear
           </p>
           <div>
-            <span className="w-96 rounded-sm bg-transparent px-3.5 py-3 text-sm font-semibold border border-white text-white ring-1 ring-inset ring-gray-300">
+            <Link
+              to="/collections"
+              className="w-96 rounded-sm bg-transparent px-4 py-3 text-lg font-semibold border border-white text-white ring-1 ring-inset ring-gray-300"
+            >
               Shop Now
-            </span>
+            </Link>
           </div>
-
         </div>
       </section>
 
@@ -147,19 +149,20 @@ export default function Homepage() {
           </Await>
         </Suspense>
       )}
-      <section className="text-[3.9rem] font-bold py-20 px-32 bg-white">
+      <section className="text-[3.0rem] font-bold py-20 px-32 bg-white">
         <div className="word-section space-y-12">
           <p className="block">
-            Hydrogen combines comfort, style, and sustainability. Our products are
-            made from organic cotton and crafted in Canada.
+            Hydrogen combines comfort, style, and sustainability. Our products
+            are made from organic cotton and crafted in Canada.
           </p>
           <p className="block">
             Each product features a minimalist aesthetic, with clean lines and
             neutral colors.
           </p>
-          <p className="block">Join the Hydrogen movement today and elevate your style.</p>
+          <p className="block">
+            Join the Hydrogen movement today and elevate your style.
+          </p>
         </div>
-
       </section>
 
       <section className="relative justify-end flex flex-col w-full aspect-[4/5] sm:aspect-square md:aspect-[5/4] lg:aspect-[3/2] xl:aspect-[2/1]">
@@ -183,9 +186,12 @@ export default function Homepage() {
           </h2>
           <h3>Clothes that work as hard as you do.</h3>
           <div>
-            <span className="w-80 rounded-sm bg-transparent px-3.5 py-3 text-sm font-semibold border border-black text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-              Shop Now 
-            </span>
+             <Link
+              to="/collections"
+              className="w-96 rounded-sm bg-transparent px-4 py-3 text-lg font-semibold border border-black text-black ring-1 ring-inset ring-gray-300"
+            >
+              Shop Now
+            </Link>
           </div>
         </div>
       </section>
@@ -200,7 +206,7 @@ export default function Homepage() {
         </Suspense>
       )} */}
 
-{/*       {featuredCollections && (
+      {/*       {featuredCollections && (
         <Suspense>
           <Await resolve={featuredCollections}>
             {({collections}) => {
@@ -302,7 +308,8 @@ export const FEATURED_COLLECTIONS_QUERY = `#graphql
   @inContext(country: $country, language: $language) {
     collections(
       first: 4,
-      sortKey: UPDATED_AT
+      ukvufbcelfjjjhfgvglkdhdurbgtbgffekfrj
+      
     ) {
       nodes {
         id
