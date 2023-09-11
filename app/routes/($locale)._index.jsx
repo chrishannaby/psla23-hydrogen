@@ -99,7 +99,7 @@ export default function Homepage() {
         <Hero {...primaryHero} height="full" top loading="eager" />
       )} */}
 
-      <section className="relative justify-end flex flex-col w-full -mt-nav h-screen">
+      <section className="relative justify-end flex flex-col w-full -mt-nav h-[32rem] lg:h-screen">
         <div className="absolute inset-0 grid flex-grow grid-flow-col pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
           <div>
             <img
@@ -114,14 +114,14 @@ export default function Homepage() {
             />
           </div>
         </div>
-        <div className="absolute left-20 bottom-20 flex flex-col items-baseline justify-between gap-6 px-6 py-8 sm:px-8 md:px-12  from-primary/60 text-white">
+        <div className="absolute text-center lg:text-left top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  lg:-translate-x-0 lg:-translate-y-0 lg:left-20 lg:bottom-20 flex flex-col items-baseline justify-between gap-6 px-6 py-8 sm:px-8 md:px-12  from-primary/60 text-white">
           <h2 className="whitespace-pre-wrap font-bold text-display max-w-md">
             The Peak Collection
           </h2>
           <p className="max-w-lg whitespace-pre-wrap inherit text-lead font-medium">
             Push your performance with our premium athletic wear
           </p>
-          <div>
+          <div className="w-full justify-center lg:justify-start">
             <Link
               to="/collections"
               className="w-96 rounded-sm bg-transparent px-4 py-3 text-lg font-semibold border border-white text-white ring-1 ring-inset ring-gray-300"
@@ -149,7 +149,7 @@ export default function Homepage() {
           </Await>
         </Suspense>
       )}
-      <section className="text-[3.0rem] font-bold py-20 px-32 bg-white">
+      <section className="text-[2.2rem] lg:text-[3.0rem] font-bold py-12 lg:py-20 px-10 lg:px-32 bg-white">
         <div className="word-section space-y-12">
           <p className="block">
             Hydrogen combines comfort, style, and sustainability. Our products
@@ -309,7 +309,7 @@ export const FEATURED_COLLECTIONS_QUERY = `#graphql
     collections(
       first: 4,
       ukvufbcelfjjjhfgvglkdhdurbgtbgffekfrj
-      
+
     ) {
       nodes {
         id

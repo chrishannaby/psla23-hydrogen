@@ -126,12 +126,12 @@ export function Section({
     <Component {...props} className={styles}>
       <div className={sectionClasses}>
         {heading && (
-          <Heading size="lead" className={'text-[1.6rem] font-normal'}>
+          <Heading size="lead" className={'text-[0.9rem] font-light'}>
             {heading}
           </Heading>
         )}
         {subheading && (
-          <Heading size="heading" className="text-[4rem] pt-3 font-bold">
+          <Heading size="heading" className="text-[2rem] lg:text-[4rem] pt-3 font-bold">
             {subheading}
           </Heading>
         )}

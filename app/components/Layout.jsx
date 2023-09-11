@@ -344,7 +344,7 @@ function Footer({menu}) {
       <div className="bg-black  text-white grid items-center justify-center ">
         <div className="px-48 py-12  ">
           <div className="text-center space-y-6">
-            <h1 className="text-[2.7rem]">Stay in the know</h1>
+            <h1 className="text-[1.8rem] lg:text-[2.7rem]">Stay in the know</h1>
             <div className="w-96 m-auto">
               <label htmlFor="email" className="sr-only">
                 Email
@@ -564,11 +564,11 @@ function Footer({menu}) {
     </Section> */}
       </div>
       <div className="py-20 px-24 bg-black text-white border-t border-gray-800">
-        <div className="flex justify-between w-full items-center">
-          <div className="w-72">
+        <div className="lg:flex justify-between w-full items-center">
+          <div className="lg:w-72 block min-h-96">
             <CountrySelector />
           </div>
-          <p className="text-xs">© 2023, Hydrogen.shop Powered by Shopify</p>
+          <p className="text-xs hidden">© 2023, Hydrogen.shop Powered by Shopify</p>
         </div>
       </div>
     </>
