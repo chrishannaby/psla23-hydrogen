@@ -192,15 +192,16 @@ shop-pay-button {
   src: url("./fonts/Inter-Regular.ttf") format("truetype");
 }
 
-h2 {
+h2,h1 {
 font-family: 'DrukShop' !important;
 }
 
 p{
-  font-family: 'Inter, sans-serif';
+  font-family: Inter, sans-serif !important;
 }
 
 .word-section p{
   font-family: 'DrukShop' !important;
 
 }
+

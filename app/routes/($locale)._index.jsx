@@ -147,7 +147,7 @@ export default function Homepage() {
           </Await>
         </Suspense>
       )}
-      <section className="text-[3.9rem] font-bold py-20 px-16 bg-white">
+      <section className="text-[3.9rem] font-bold py-20 px-32 bg-white">
         <div className="word-section space-y-12">
           <p className="block">
             Hydrogen combines comfort, style, and sustainability. Our products are

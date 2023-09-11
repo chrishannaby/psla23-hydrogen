@@ -122,12 +122,12 @@ export default function Collection() {
   const {collection, collections, appliedFilters} = useLoaderData();
 
   return (
-    <>
+    <div className="w-10/12 m-auto">
       <PageHeader heading={collection.title}>
         {collection?.description && (
           <div className="flex items-baseline justify-between w-full">
             <div>
-              <Text format width="narrow" as="p" className="inline-block">
+              <Text format width="default" as="p" className="inline-block ">
                 {collection.description}
               </Text>
             </div>
@@ -167,7 +167,7 @@ export default function Collection() {
           </Pagination>
         </SortFilter>
       </Section>
-    </>
+    </div>
   );
 }
 

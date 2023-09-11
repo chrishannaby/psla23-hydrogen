@@ -237,7 +237,7 @@ function DesktopHeader({isHome, menu, openCart, title}) {
           ))}
         </nav>
         <a className="w-72">
-          <img src="images/logo.png" className="w-100 h-auto" />
+          <img src="/images/logo.png" className="w-100 h-auto" />
         </a>
         <div className="flex items-center gap-1">
           <Form
