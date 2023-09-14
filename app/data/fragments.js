@@ -5,6 +5,8 @@ export const MEDIA_FRAGMENT = `#graphql
     alt
     previewImage {
       url
+      width
+      height
     }
     ... on MediaImage {
       id
@@ -44,6 +46,11 @@ export const PRODUCT_CARD_FRAGMENT = `#graphql
     publishedAt
     handle
     vendor
+    media(first: 1) {
+        nodes {
+          ...Media
+        }
+      }
     variants(first: 1) {
       nodes {
         id
@@ -73,6 +80,7 @@ export const PRODUCT_CARD_FRAGMENT = `#graphql
       }
     }
   }
+  ${MEDIA_FRAGMENT}
 `;
 
 export const FEATURED_COLLECTION_FRAGMENT = `#graphql

@@ -40,6 +40,8 @@ export function ProductCard({
     quantity: 1,
   };
 
+  const imgData = !image ? product?.media?.nodes?.[0]?.previewImage : image;
+
   return (
     <div className="flex flex-col gap-2">
       <Link
@@ -49,13 +51,13 @@ export function ProductCard({
       >
         <div className={clsx('grid gap-4', className)}>
           <div className=" aspect-[4/5] bg-primary/5">
-            {image && (
+            {imgData && (
               <Image
                 className="object-cover w-full fadeIn"
                 sizes="(min-width: 64em) 25vw, (min-width: 48em) 30vw, 45vw"
                 aspectRatio="4/5"
-                data={image}
-                alt={image.altText || `Picture of ${product.title}`}
+                data={imgData}
+                alt={imgData.altText || `Picture of ${product.title}`}
                 loading={loading}
               />
             )}
