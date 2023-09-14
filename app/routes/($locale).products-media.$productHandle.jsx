@@ -93,9 +93,7 @@ export async function loader({params, request, context}) {
     url: request.url,
   });
 
-  const reviews = delay(10).then(() => {
-    return reviewData;
-  });
+  const reviews = reviewData;
 
   return defer({
     variants,
@@ -124,6 +122,13 @@ function redirectToFirstVariant({product, request}) {
   throw redirect(`/products/${product.handle}?${searchParams.toString()}`, 302);
 }
 
+const mediaOptions = {
+  video: {
+    autoPlay: true,
+    loop: true,
+  },
+};
+
 export default function Product() {
   const {product, shop, recommended, variants, reviews} = useLoaderData();
   const {media, title, vendor, descriptionHtml} = product;
@@ -133,11 +138,20 @@ export default function Product() {
     <>
       <Section className="px-0 md:px-8 lg:px-12 ">
         <div className="grid items-start md:gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-3">
-          <MediaFile
-            data={media.nodes[0]}
-            id={product.id}
-            className="lg:col-span-2"
-          />
+          <div className="lg:col-span-2 ">
+            <MediaFile
+              data={media.nodes[0]}
+              id={product.id}
+              mediaOptions={{
+                className: 'w-full',
+                video: {
+                  autoPlay: true,
+                  muted: true,
+                  loop: true,
+                },
+              }}
+            />
+          </div>
           <div className="sticky md:-mb-nav md:top-nav md:-translate-y-nav md:h-screen md:pt-nav hiddenScroll md:overflow-y-scroll">
             <section className="flex flex-col w-full max-w-xl gap-8 p-6 md:mx-auto md:max-w-sm md:px-0">
               <div className="grid gap-2">

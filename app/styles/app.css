@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+model-viewer {
+  width: 100%;
+  aspect-ratio: 3/4;
+  height: auto;
+}
+
 /* Tokens */
 :root {
   --color-primary: 20 20 20; /* Text, buttons, etc. */
@@ -182,26 +188,24 @@ shop-pay-button {
   }
 }
 
-
 @font-face {
   font-family: 'DrukShop';
-  src: url("./fonts/DrukWide.otf") format("opentype");
+  src: url('./fonts/DrukWide.otf') format('opentype');
 }
 @font-face {
   font-family: 'Inter';
-  src: url("./fonts/Inter-Regular.ttf") format("truetype");
+  src: url('./fonts/Inter-Regular.ttf') format('truetype');
 }
 
-h2,h1 {
-font-family: 'DrukShop' !important;
+h2,
+h1 {
+  font-family: 'DrukShop' !important;
 }
 
-p{
+p {
   font-family: Inter, sans-serif !important;
 }
 
-.word-section p{
+.word-section p {
   font-family: 'DrukShop' !important;
-
 }
-
