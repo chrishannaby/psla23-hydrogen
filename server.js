@@ -10,6 +10,9 @@ import {
   createCartHandler,
   createStorefrontClient,
   storefrontRedirect,
+  createWithCache,
+  CacheNone,
+  CacheLong,
 } from '@shopify/hydrogen';
 
 import {HydrogenSession} from '~/lib/session.server';
@@ -54,6 +57,23 @@ export default {
         setCartId: cartSetIdDefault(),
       });
 
+      const withCache = createWithCache({cache, waitUntil});
+
+      const fetchReviews = (cacheOptions = CacheLong()) => {
+        const API_ENDPOINT =
+          'https://api.val.town/v1/run/chrishannaby.getReviews';
+        const cacheKey = ['get', 'Reviews'];
+
+        return withCache(cacheKey, cacheOptions, async () => {
+          const response = await fetch(API_ENDPOINT);
+
+          if (!response.ok)
+            throw new Error('Something went wrong. Skipping cache.');
+
+          return response.json();
+        });
+      };
+
       /**
        * Create a Remix request handler and pass
        * Hydrogen's Storefront client to the loader context.
@@ -67,6 +87,7 @@ export default {
           storefront,
           cart,
           env,
+          fetchReviews,
         }),
       });
 

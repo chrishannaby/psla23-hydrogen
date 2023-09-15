@@ -17,7 +17,6 @@ import {
   IconCaret,
   IconCheck,
   IconClose,
-  ProductGallery,
   ProductSwimlane,
   Section,
   Skeleton,
@@ -122,13 +121,6 @@ function redirectToFirstVariant({product, request}) {
   throw redirect(`/products/${product.handle}?${searchParams.toString()}`, 302);
 }
 
-const mediaOptions = {
-  video: {
-    autoPlay: true,
-    loop: true,
-  },
-};
-
 export default function Product() {
   const {product, shop, recommended, variants, reviews} = useLoaderData();
   const {media, title, vendor, descriptionHtml} = product;
@@ -139,7 +131,17 @@ export default function Product() {
       <Section className="px-0 md:px-8 lg:px-12 ">
         <div className="grid items-start md:gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <img src="/images/placeholder.svg" className="w-full" />
+            <MediaFile
+              data={media.nodes[0]}
+              mediaOptions={{
+                className: 'w-full',
+                video: {
+                  autoPlay: true,
+                  loop: true,
+                  muted: true,
+                },
+              }}
+            />
           </div>
           <div className="sticky md:-mb-nav md:top-nav md:-translate-y-nav md:h-screen md:pt-nav hiddenScroll md:overflow-y-scroll">
             <section className="flex flex-col w-full max-w-xl gap-8 p-6 md:mx-auto md:max-w-sm md:px-0">

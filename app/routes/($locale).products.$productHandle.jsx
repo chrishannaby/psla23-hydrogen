@@ -92,7 +92,7 @@ export async function loader({params, request, context}) {
     url: request.url,
   });
 
-  const reviews = getReviewsData();
+  const reviews = context.fetchReviews();
 
   return defer({
     variants,
@@ -572,52 +572,4 @@ async function getRecommendedProducts(storefront, productId) {
   mergedProducts.splice(originalProduct, 1);
 
   return {nodes: mergedProducts};
-}
-
-function getReviewsData() {
-  return reviewData;
-}
-
-function getSlowReviewsData() {
-  return delay(10).then(() => reviewData);
-}
-
-var reviewData = [
-  {
-    id: 1,
-    title: "Can't say enough good things",
-    rating: 5,
-    content: `
-      <p>I was really pleased with the overall shopping experience. My order even included a little personal, handwritten note, which delighted me!</p>
-    `,
-    author: 'Risako M',
-    date: 'May 16, 2021',
-    datetime: '2021-05-16',
-  },
-  {
-    id: 2,
-    title: 'Exceeded my expectations',
-    rating: 5,
-    content: `
-      <p>The product arrived on time and was packaged very well. The quality is top-notch and it's exactly what I was looking for.</p>
-    `,
-    author: 'John D',
-    date: 'June 10, 2021',
-    datetime: '2021-06-10',
-  },
-  {
-    id: 3,
-    title: 'Great value for money',
-    rating: 4,
-    content: `
-      <p>The product is of good quality and the price is very reasonable. I'm happy with my purchase and would buy from this store again.</p>
-    `,
-    author: 'Sarah L',
-    date: 'July 5, 2021',
-    datetime: '2021-07-05',
-  },
-];
-
-function delay(s) {
-  return new Promise((resolve) => setTimeout(resolve, s * 1000));
 }
