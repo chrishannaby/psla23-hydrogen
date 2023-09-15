@@ -92,9 +92,7 @@ export async function loader({params, request, context}) {
     url: request.url,
   });
 
-  const reviews = delay(10).then(() => {
-    return reviewData;
-  });
+  const reviews = getReviewsData();
 
   return defer({
     variants,
@@ -574,6 +572,14 @@ async function getRecommendedProducts(storefront, productId) {
   mergedProducts.splice(originalProduct, 1);
 
   return {nodes: mergedProducts};
+}
+
+function getReviewsData() {
+  return reviewData;
+}
+
+function getSlowReviewsData() {
+  return delay(10).then(() => reviewData);
 }
 
 var reviewData = [
