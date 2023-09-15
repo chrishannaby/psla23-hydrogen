@@ -116,7 +116,7 @@ export default function Homepage() {
         </div>
         <div className="absolute text-center lg:text-left top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  lg:-translate-x-0 lg:-translate-y-0 lg:left-20 lg:bottom-20 flex flex-col items-baseline justify-between gap-6 px-6 py-8 sm:px-8 md:px-12  from-primary/60 text-white">
           <h2 className="whitespace-pre-wrap font-bold text-display max-w-md">
-            The Peak Collection
+            Partners Summit 2023
           </h2>
           <p className="max-w-lg whitespace-pre-wrap inherit text-lead font-medium">
             Push your performance with our premium athletic wear
@@ -186,7 +186,7 @@ export default function Homepage() {
           </h2>
           <h3>Clothes that work as hard as you do.</h3>
           <div>
-             <Link
+            <Link
               to="/collections"
               className="w-96 rounded-sm bg-transparent px-4 py-3 text-lg font-semibold border border-black text-black ring-1 ring-inset ring-gray-300"
             >
