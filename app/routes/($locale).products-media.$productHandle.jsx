@@ -118,7 +118,10 @@ function redirectToFirstVariant({product, request}) {
     searchParams.set(option.name, option.value);
   }
 
-  throw redirect(`/products/${product.handle}?${searchParams.toString()}`, 302);
+  throw redirect(
+    `/products-media/${product.handle}?${searchParams.toString()}`,
+    302,
+  );
 }
 
 export default function Product() {
