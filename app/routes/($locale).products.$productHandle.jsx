@@ -92,7 +92,7 @@ export async function loader({params, request, context}) {
     url: request.url,
   });
 
-  const reviews = context.fetchReviews();
+  const reviews = await context.fetchReviews();
 
   return defer({
     variants,
