@@ -59,7 +59,7 @@ export default {
 
       const withCache = createWithCache({cache, waitUntil});
 
-      const fetchReviews = (cacheOptions = CacheLong()) => {
+      const fetchReviews = (cacheOptions = CacheNone()) => {
         const API_ENDPOINT =
           'https://api.val.town/v1/run/chrishannaby.getReviews';
         const cacheKey = ['get', 'Reviews'];
